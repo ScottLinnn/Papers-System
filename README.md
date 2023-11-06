@@ -8,7 +8,9 @@ Repeatable Read - RR
 Snapshot-Isolation - SI  
 
 ## List
-* TiDB
+- [x] TiDB
+- [ ] Bigtable
+- [ ] Dynamo
 
 ## TiDB
 
