@@ -3,9 +3,9 @@ I'm interested in database systems and I plan to learn this field broadly by rea
 
 ## Abbreviation
 Transaction - Tx  
-Concurrency Control - Cc
-Repeatable Read - RR
-Snapshot-Isolation - SI
+Concurrency Control - Cc  
+Repeatable Read - RR  
+Snapshot-Isolation - SI  
 
 ## List
 * TiDB
