@@ -6,6 +6,7 @@ Transaction - Tx
 Concurrency Control - Cc  
 Repeatable Read - RR  
 Snapshot-Isolation - SI  
+Highly Available/High Availability - HA
 
 ## List
 - [x] TiDB
@@ -34,7 +35,11 @@ Tx processing: Cc protocol is based on MVCC, but it also provides pessimistic co
 
 OLAP optmizations: cropping unneeded columns, eliminating projection, pushing down predicates, deriving predicates, constant folding, eliminating “group by” or outer joins, and unnesting subqueries.
 
-TiDB uses CBO to estimate cost of queries based on size of tuple/column/index and number of tuple/region. It uses these metrics to build equations to compute cost and select the min cost plan, which may go to column store, row store or both, based on which are the targets(tuple/column/index) to scan.
 
-Benchmark: Higher throughputs than CockRoachDB even under pessimistic cc. For OLAP, it's always better to access from both row store and column store than accessing single store.
+## Bigtable
+
+Target: Scalable, HA, Widely applicable, High performance  
+Wide-column, update to a single row is atomic even for multiple columns.  
+Sorted String Table with range parition, so client can design row keys such that frequently used-together keys are close to each other.
+
  
