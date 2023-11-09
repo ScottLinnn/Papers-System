@@ -10,7 +10,7 @@ Highly Available/High Availability - HA
 
 ## List
 - [x] TiDB
-- [ ] Bigtable
+- [x] Bigtable
 - [ ] Dynamo
 
 ## TiDB
@@ -39,7 +39,18 @@ OLAP optmizations: cropping unneeded columns, eliminating projection, pushing do
 ## Bigtable
 
 Target: Scalable, HA, Widely applicable, High performance  
+
 Wide-column, update to a single row is atomic even for multiple columns.  
-Sorted String Table with range parition, so client can design row keys such that frequently used-together keys are close to each other.
+
+Sorted String Table with range parition, so client can design row keys such that frequently used-together keys are close to each other. A row range is called tablet.  
+
+Architecture is one master server + many tablet servers, master manages distribution of tablets. Bigtable uses a tree-like structure, stores location of tablet metadata at the root, which stores location of tablets, which store the actual data. Client usually doesn't contact master node, instead uses a DNS-like fashion to lookup and cache tablet locations.  
+
+Writes firstly go to logs on GFS, then go to the memtable, then go to SSTable. The metadata mentioned above contains sstable + log of a tablet, so using the metadata can recover a tablet.
+Reads go to the merge view of memtable and sstable.  
+
+Details about SSTable are omitted since I've read about it elsewhere. Immutability makes CC very easy.  
+
+Highlights from benchmarking: Writes are faster than random reads since commits are grouped and the append-only nature. Sequential reads are much faster than random reads due to block-level caching. Load-balancing is not good, which hurts scalability.
 
  
