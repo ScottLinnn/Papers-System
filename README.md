@@ -11,6 +11,7 @@ Highly Available/High Availability - HA
 ## List
 - [x] TiDB
 - [x] Bigtable
+- [ ] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
 - [ ] Dynamo
 
 ## TiDB
