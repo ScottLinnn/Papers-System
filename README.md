@@ -1,5 +1,6 @@
 # ReadDB
-I'm interested in database systems and I plan to learn this field broadly by reading papers, so I make a repo as a notebook as I read papers. 
+I'm interested in database systems and I plan to learn this field broadly by reading papers, so I make a repo as a notebook as I read papers.  
+Since I target at learning things I'm interested in, the notes may omit many details in the papers.
 
 ## Abbreviation
 Transaction - Tx  
@@ -11,7 +12,7 @@ Highly Available/High Availability - HA
 ## List
 - [x] TiDB
 - [x] Bigtable
-- [ ] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
+- [x] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
 - [ ] Dynamo
 
 ## TiDB
@@ -53,5 +54,20 @@ Reads go to the merge view of memtable and sstable.
 Details about SSTable are omitted since I've read about it elsewhere. Immutability makes CC very easy.  
 
 Highlights from benchmarking: Writes are faster than random reads since commits are grouped and the append-only nature. Sequential reads are much faster than random reads due to block-level caching. Load-balancing is not good, which hurts scalability.
+
+
+## Pavlo12
+
+Two problems in distributed SQL systems: number of distributed transactions and skew. The goal is to generate good database design that minimizes both through automatic partitioning.  
+Design options include:  
+1. Horizontal partitioning: fragmenting a table by some attributes.
+2. Table replication: replicating some read-only/heavy tables on all nodes to save coordination, since it's always available locally from any node's point of view.
+3. Secondary index: building index for more columns to reduce accesses of more kinds of queries.
+4. Stored procedure routing: send query to the node that has most of the data needed by the query.
+
+Use a large-neighborhood search based on cost model which calculates:
+
+1. CoordinationCost, which is an equation that multiplies number of distributed transaction and number of parition accessed
+2. Skew factor, (in brief)which computes the access rate(NumUsedByTx/SumNumUsedByTx) for each partition, then adds up the ratio between this rate and ideal rate(1/NumPartition)
 
  
