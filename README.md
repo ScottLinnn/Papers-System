@@ -1,6 +1,6 @@
 # ReadDB
 I'm interested in database systems and I plan to learn this field broadly by reading papers, so I make a repo as a notebook as I read papers.  
-Since I target at learning things I'm interested in, the notes may omit many details in the papers.
+Since I target at learning things I'm interested in, the notes may omit many details of the papers.
 
 ## Abbreviation
 Transaction - Tx  
@@ -15,6 +15,10 @@ Highly Available/High Availability - HA
 - [x] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
 - [ ] Zhou, X., Yu, X., Graefe, G. and Stonebraker, M., 2023. Two is Better Than One: The Case for 2-Tree for Skewed Data Sets. memory, 11, p.13.
 - [ ] Dynamo
+- [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
+- [ ] Franklin, M.J., 1997. Concurrency Control and Recovery.
+- [ ] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. Building an elastic query engine on disaggregated storage. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
+- [ ] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
 
 ## TiDB
 
