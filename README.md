@@ -16,7 +16,7 @@ Highly Available/High Availability - HA
 - [ ] Zhou, X., Yu, X., Graefe, G. and Stonebraker, M., 2023. Two is Better Than One: The Case for 2-Tree for Skewed Data Sets. memory, 11, p.13.
 - [ ] Dynamo
 - [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
-- [ ] Franklin, M.J., 1997. Concurrency Control and Recovery.
+- [x] Franklin, M.J., 1997. Concurrency Control and Recovery.
 - [ ] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. Building an elastic query engine on disaggregated storage. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
 - [ ] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
 
@@ -75,4 +75,9 @@ Use a large-neighborhood search based on cost model which calculates:
 1. CoordinationCost, which is an equation that multiplies number of distributed transaction and number of parition accessed
 2. Skew factor, (in brief)which computes the access rate(NumUsedByTx/SumNumUsedByTx) for each partition, then adds up the ratio between this rate and ideal rate(1/NumPartition)
 
- 
+
+## Franklin97
+
+For me this is more like a review of the database course I took. It's great - it explains CC and recovery very well, clears some of my confusions.
+
+
