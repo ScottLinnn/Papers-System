@@ -1,6 +1,6 @@
 # ReadDB
-I'm interested in database systems and I plan to learn this field broadly by reading papers, so I make a repo as a notebook as I read papers.  
-Since I target at learning things I'm interested in, the notes may omit many details of the papers.
+I'm interested in database systems and I plan to learn this field broadly by reading papers, so I make a repo as a notebook.  
+Since I focus on things I'm interested to learn, the notes may omit many details of the papers.
 
 ## Abbreviation
 Transaction - Tx  
@@ -18,7 +18,10 @@ Highly Available/High Availability - HA
 - [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
 - [x] Franklin, M.J., 1997. Concurrency Control and Recovery.
 - [ ] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. Building an elastic query engine on disaggregated storage. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
-- [ ] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
+- [x] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
+- [ ] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
+- [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. Starling: A scalable query engine on cloud functions. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
+
 
 ## TiDB
 
@@ -75,9 +78,18 @@ Use a large-neighborhood search based on cost model which calculates:
 1. CoordinationCost, which is an equation that multiplies number of distributed transaction and number of parition accessed
 2. Skew factor, (in brief)which computes the access rate(NumUsedByTx/SumNumUsedByTx) for each partition, then adds up the ratio between this rate and ideal rate(1/NumPartition)
 
+## Li22
+
+Cloud-native OLTP: Disaggregate compute and storage to scale them independently. Log is the database. Log can be separate from storage so that log persists writes and storage serves reads. A shared buffer pool layer can be added to further improve read performance and reduce duplicated values read by compute nodes.
+
+Cloud-native OLAP: Similar to the disaggregation of OLTP. Compute nodes might cache hot data in SSD cache, shared memory can be used to accelerate distributed joins.
+
+Two kinds of serverless: function as a service, and elastic query engine.
+
+Challenges: Support multiple write nodes, fine-grained serverless provisioning, cloud-native HTAP(but seems there exists solutions, such as singlestore and polarDB)
 
 ## Franklin97
 
-For me this is more like a review of the database course I took. It's great - it explains CC and recovery very well, clears some of my confusions.
+For me this is more like a review of the database course I took, so I don't want to replicate the class notes here. This paper is great - it explains CC and recovery very well, clears some of my confusions.
 
 
