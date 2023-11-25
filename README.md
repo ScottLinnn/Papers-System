@@ -13,7 +13,7 @@ Highly Available/High Availability - HA
 - [x] TiDB
 - [x] Bigtable
 - [x] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
-- [ ] Zhou, X., Yu, X., Graefe, G. and Stonebraker, M., 2023. Two is Better Than One: The Case for 2-Tree for Skewed Data Sets. memory, 11, p.13.
+- [x] Zhou, X., Yu, X., Graefe, G. and Stonebraker, M., 2023. Two is Better Than One: The Case for 2-Tree for Skewed Data Sets. memory, 11, p.13.
 - [ ] Dynamo
 - [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
 - [x] Franklin, M.J., 1997. Concurrency Control and Recovery.
@@ -91,5 +91,25 @@ Challenges: Support multiple write nodes, fine-grained serverless provisioning, 
 ## Franklin97
 
 For me this is more like a review of the database course I took, so I don't want to replicate the class notes here. This paper is great - it explains CC and recovery very well, clears some of my confusions.
+
+
+## Zhou23
+
+Two tree architecture: one tree for hot data, one tree for cold data. This improves memory utilization because usually one block in a B+Tree has many cold records and few hot ones. This paper proposes a record migration protocol which essentially aggregates hot records into blocks and store in the hot tree and prioritizing accessing hot tree, so blocks with full hot data are likely to stay in memory, which improves mem utilization.
+
+Migration is bi-directional: downward(from hot tree to cold tree) and upward(cold tree to hot tree). Downward is pretty much like cache eviction. To reduce metadata overhead brought by policy like LRU this paper uses CLOCK replacement. Upward migration is pretty simple, it's a naive approach(move data upward once it's accessed) combined with a sampling rate D, which probabilistically determine if to move(random(0,1) <= D). The reason to do a sampling is to prevent cold data from replacing hot data, for example sequential scan. It's very simple, comes with the benefits of nearly zero metadata overhead.
+
+vs LSM tree: It only migrates downwards, not upwards, so this paper supports upward migration for RocksDB to do benchmarking.  
+vs Naive row cache: It takes space, not good for range query.  
+vs Anti-Caching: It consumes much more memory to maintain metadata.  
+
+Durability and recovery is easy, just use existing approach.  
+
+Highlights from benchmarking: Even when hot dataset is small enough to fit in memory under traditional B+Tree, two-tree is still faster because hot tree's index node is small. For update workload, naive LSM Tree can be as good as LSM Tree+upward migration because update workload naturally clusters hot records in top level.
+For range scan workload, there are not much improvements(I think mostly due to the fact that hot tree should be small so still needs to read from bottom).  
+
+Future directions: CC, Cloud-native(exploiting shared buffer pool), non-tree based data structures.
+
+
 
 
