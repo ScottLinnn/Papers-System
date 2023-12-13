@@ -21,6 +21,7 @@ Highly Available/High Availability - HA
 - [x] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
 - [ ] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
 - [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. Starling: A scalable query engine on cloud functions. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
+- [ ] Verbitski, A., Gupta, A., Saha, D., Brahmadesam, M., Gupta, K., Mittal, R., Krishnamurthy, S., Maurice, S., Kharatishvili, T. and Bao, X., 2017, May. Amazon aurora: Design considerations for high throughput cloud-native relational databases. In Proceedings of the 2017 ACM International Conference on Management of Data (pp. 1041-1052).
 
 
 ## TiDB
