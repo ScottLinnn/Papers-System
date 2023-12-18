@@ -22,6 +22,7 @@ Highly Available/High Availability - HA
 - [ ] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
 - [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. Starling: A scalable query engine on cloud functions. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
 - [ ] Verbitski, A., Gupta, A., Saha, D., Brahmadesam, M., Gupta, K., Mittal, R., Krishnamurthy, S., Maurice, S., Kharatishvili, T. and Bao, X., 2017, May. Amazon aurora: Design considerations for high throughput cloud-native relational databases. In Proceedings of the 2017 ACM International Conference on Management of Data (pp. 1041-1052).
+- [x] Stonebraker, M. and Hellerstein, J., 2005. What goes around comes around. Readings in database systems, 4, p.1.
 
 
 ## TiDB
@@ -111,6 +112,17 @@ For range scan workload, there are not much improvements(I think mostly due to t
 
 Future directions: CC, Cloud-native(exploiting shared buffer pool), non-tree based data structures.
 
+
+## Stonebraker05
+
+This is a longer paper that covers many data models appeared in the history. Some highlights:
+
+1. KISS. If complexity cannot bring _siginifcant benefits_, it's likeley to lose to simple solutions. In earlier IMS and CODASYL(which is like what we call "graph database" now), the idea to use tree or graph based data structure to represent "relations" turn out to be too complex, because the data structures themselves have natural constraints(e.g. parental relations in tree, multi-dimensionality of graph). These constraints 1. make query harder 2. decrease independence 3. cause duplication 4. make database design harder.
+2. Independence. The property of keeping applications to run even if schema changes is important. I still didn't fully understand why relational model has better logical data indepence than CODASYL/graph. Changing schema of a table can also make some SQL queries in the application code not runnable. I guess it's because changing a table schema has smaller affects than changing a type in the graph network, sicne graph queries are likely to involve many more type names/attribute names than relational queries.
+3. Flexibiltiy/generalization. The only successful innovation is Object-Relational database(Postgres), featured by its UDT/UDF system. The idea of supporting new types and specialized access methods for some certain cases(in order to gain performance) is not good, because there will always be new types and new demands in the future. If we implement this in DBMS, the work is never gonna stop. So rather, just let application developers do it themselves.
+4. Repeat. History tends to repeat itself. The fundemental concepts about data model that can be explored are already explored. XML just brings a lot of old stuff back. To my current knowledge graph database is another example. The paper is right about predicting the use of XML: (to my expereince) nowadays XMLs are used more in things like config files, while JSON(more light-weight) is the primary format to pass the data.
+5. Flexible schema. The notion of schema-last/unstructured data turns out to be popular in some sense, indicated by the rise of NoSQL systems.
+   
 
 
 
