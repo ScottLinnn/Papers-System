@@ -17,7 +17,7 @@ Highly Available/High Availability - HA
 - [ ] Dynamo
 - [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
 - [x] Franklin, M.J., 1997. Concurrency Control and Recovery.
-- [ ] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. Building an elastic query engine on disaggregated storage. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
+- [x] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. Building an elastic query engine on disaggregated storage. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
 - [x] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
 - [ ] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
 - [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. Starling: A scalable query engine on cloud functions. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
@@ -124,5 +124,17 @@ This is a longer paper that covers many data models appeared in the history. Som
 5. Flexible schema. The notion of schema-last/unstructured data turns out to be popular in some sense, indicated by the rise of NoSQL systems. I only read the good things about flexible schema, I definitely need to learn more about their downsides comprehensively.
    
 
+## Vuppalapati20
 
+Intellectually not very interesting, more like just describing how a cloud-native databases performs under read-world workload. It talks about some challenges and problem-solvings, but many of the solutions are simple/intuitive and some problems are obviously not studied in depth/put much efforts into.
+
+Three Strengths
+-	Ephemeral storage is a good attempt – not being afraid of adding depth in a large system is appreciated.
+-	Data-driven. It provides dataset for readers to reproduce the results, makes many graphs that show the real-world workload comprehensively(and honestly?).
+-	Although generally the correlation between business and technology is questionable, Snowflake indeed has a lot of customers and can be seen successful in this sense.
+
+Three Weaknesses
+-	Basically no innovative things, the paper is more like describing how to use simple/intuitive ideas to solve some normal real-world problems
+-	Demonstration of the real benefits of disaggregation seems to be missing. There should be something like a comparison between Snowflake and another system without disaggregation under same workload to show “why disaggregation is good”.
+-	Incapability of matching node number with workload size could undermine the point of having elasticity at all, the potential harm of this problem is severe than other problems and should be discussed more. 
 
