@@ -126,7 +126,7 @@ This is a longer paper that covers many data models appeared in the history. Som
 
 ## Vuppalapati20
 
-Intellectually not very interesting, more like just describing how a cloud-native databases performs under read-world workload. It talks about some challenges and problem-solvings, but many of the solutions are simple/intuitive and some problems are obviously not studied in depth/put much efforts into.
+Intellectually not very interesting, more like just describing how a cloud-native databases performs under read-world workload. 
 
 Three Strengths
 -	Ephemeral storage is a good attempt – not being afraid of adding depth in a large system is appreciated.
