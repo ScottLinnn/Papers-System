@@ -19,7 +19,7 @@ Highly Available/High Availability - HA
 - [x] Franklin, M.J., 1997. Concurrency Control and Recovery.
 - [x] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. Building an elastic query engine on disaggregated storage. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
 - [x] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
-- [ ] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
+- [x] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
 - [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. Starling: A scalable query engine on cloud functions. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
 - [ ] Verbitski, A., Gupta, A., Saha, D., Brahmadesam, M., Gupta, K., Mittal, R., Krishnamurthy, S., Maurice, S., Kharatishvili, T. and Bao, X., 2017, May. Amazon aurora: Design considerations for high throughput cloud-native relational databases. In Proceedings of the 2017 ACM International Conference on Management of Data (pp. 1041-1052).
 - [x] Stonebraker, M. and Hellerstein, J., 2005. What goes around comes around. Readings in database systems, 4, p.1.
@@ -138,3 +138,11 @@ Three Weaknesses
 -	Demonstration of the real benefits of disaggregation seems to be missing. There should be something like a comparison between Snowflake and another system without disaggregation under same workload to show “why disaggregation is good”.
 -	Incapability of matching node number with workload size could undermine the point of having elasticity at all, the potential harm of this problem is severe than other problems and should be discussed more. 
 
+
+## Li21
+
+The paper is a summary about researches on AI-DB interaction. It's already prettry densed so I won't try to compress the information further. I will not take notes about the contents, but just talk about my feelings. If you want to know "what the paper says", I recommend reading the original paper.
+
+Generally AI4DB makes more sense than DB4AI. I think AI researchers have more expertise on the problems where database tries to help AI. On the other hand, AI-based approach can represent the reality more accurately than heuristic-based approach used in traditional databases, thus gets us closer to optimal design. For example, I think terms like OLTP/OLAP, read-heavy/write-heavy are simple categorization of workload, using high-dimensional vector to represent workload can help us discover more hidden knowledge about the workload. 
+
+Both database and AI have "operator". It's tempting to imagine a world where they are homogenized, database can have matrix-product operators in volcano model that generate insights on the data "on the fly", and DNNs are embbeded with neurons that can do delete/update/limit/filter/sort/sum/max... However, this can be _huge_ amount of work.
