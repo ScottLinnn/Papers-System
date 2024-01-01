@@ -14,15 +14,16 @@ Highly Available/High Availability - HA
 - [x] Bigtable
 - [x] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
 - [x] Zhou, X., Yu, X., Graefe, G. and Stonebraker, M., 2023. Two is Better Than One: The Case for 2-Tree for Skewed Data Sets. memory, 11, p.13.
-- [ ] Dynamo
-- [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
 - [x] Franklin, M.J., 1997. Concurrency Control and Recovery.
 - [x] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. Building an elastic query engine on disaggregated storage. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
 - [x] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
 - [x] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
+- [x] Stonebraker, M. and Hellerstein, J., 2005. What goes around comes around. Readings in database systems, 4, p.1.
+- [x] Abadi, D.J., Madden, S.R. and Hachem, N., 2008, June. Column-stores vs. row-stores: how different are they really?. In Proceedings of the 2008 ACM SIGMOD international conference on Management of data (pp. 967-980).
 - [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. Starling: A scalable query engine on cloud functions. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
 - [ ] Verbitski, A., Gupta, A., Saha, D., Brahmadesam, M., Gupta, K., Mittal, R., Krishnamurthy, S., Maurice, S., Kharatishvili, T. and Bao, X., 2017, May. Amazon aurora: Design considerations for high throughput cloud-native relational databases. In Proceedings of the 2017 ACM International Conference on Management of Data (pp. 1041-1052).
-- [x] Stonebraker, M. and Hellerstein, J., 2005. What goes around comes around. Readings in database systems, 4, p.1.
+- [ ] Dynamo
+- [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
 
 
 ## TiDB
@@ -146,3 +147,21 @@ The paper is a summary about researches on AI-DB interaction. It's already prett
 Generally AI4DB makes more sense than DB4AI. I think AI researchers have more expertise on the problems where database tries to help AI. On the other hand, AI-based approach can represent the reality more accurately than heuristic-based approach used in traditional databases, thus gets us closer to optimal design. For example, I think terms like OLTP/OLAP, read-heavy/write-heavy are simple categorization of workload, using high-dimensional vector to represent workload can help us discover more hidden knowledge about the workload. 
 
 Both database and AI have "operator". It's tempting to imagine a world where they are homogenized, database can have matrix-product operators in volcano model that generate insights on the data "on the fly", and DNNs are embbeded with neurons that can do delete/update/limit/filter/sort/sum/max... However, this can be _huge_ amount of work.
+
+## Abadi08
+
+This paper tests whether emulating a column-store on a row-store system can achieve the performance just like a native column-store and the answer is no. It points out the main reason of “no” is tuple overhead(header and record ids stored with each column value) and reconstruction costs when emulating columnar format in a row store. But this paper is actually more like "currently, how column store and row store are implemented differently" rather than "column store vs row store as two architectures", because their differences are essentially erasable - given enough efforts, a row store can get rid of the problems highlighted by this paper such as tuple overheads and ordering in heap file, thus performs just like a column store.
+
+Three Strengths
+-	Deep breakdown of optimizations on both row store and column store.
+-	Position a good problem – this gets us closer to understand the nature of these storage layout concepts.
+-	Looks like they did a lot of dirty work.
+
+Three Weaknesses
+-	The introduction of invisible join is kind of strange – why not putting it in another paper?
+-	Analysis on query execution steps is hard to understand…not sure if it’s my problem
+-	As a paper focusing on comparing existing systems rather than building some new stuff, I think it can be much shorter.
+
+
+
+
