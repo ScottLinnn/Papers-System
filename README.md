@@ -1,6 +1,5 @@
 # ReadDB
-I'm interested in database systems and I plan to learn this field broadly by reading papers, so I make a repo as a notebook.  
-Since I focus on things I'm interested to learn, the notes may omit many details of the papers.
+A notebook for papers I read about database systems, distributed systems and operating systems.
 
 ## Abbreviation
 Transaction - Tx  
@@ -10,6 +9,7 @@ Snapshot-Isolation - SI
 Highly Available/High Availability - HA
 
 ## List
+### Read + Noted
 - [x] TiDB
 - [x] Bigtable
 - [x] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
@@ -20,11 +20,23 @@ Highly Available/High Availability - HA
 - [x] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
 - [x] Stonebraker, M. and Hellerstein, J., 2005. What goes around comes around. Readings in database systems, 4, p.1.
 - [x] Abadi, D.J., Madden, S.R. and Hachem, N., 2008, June. Column-stores vs. row-stores: how different are they really?. In Proceedings of the 2008 ACM SIGMOD international conference on Management of data (pp. 967-980).
+### Read
+- [x] Hauser, C., Jacobi, C., Theimer, M., Welch, B. and Weiser, M., 1993. Using threads in interactive systems: A case study. ACM SIGOPS Operating Systems Review, 27(5), pp.94-105.
+- [x] Savage, S., Burrows, M., Nelson, G., Sobalvarro, P. and Anderson, T., 1997. Eraser: A dynamic data race detector for multithreaded programs. ACM Transactions on Computer Systems (TOCS), 15(4), pp.391-411.
+- [x] Patterson, D.A., Gibson, G. and Katz, R.H., 1988, June. A case for redundant arrays of inexpensive disks (RAID). In Proceedings of the 1988 ACM SIGMOD international conference on Management of data (pp. 109-116).
+- [x] Lamport, L., 2019. Time, clocks, and the ordering of events in a distributed system. In Concurrency: the Works of Leslie Lamport (pp. 179-196).
+- [x] Dean, J. and Ghemawat, S., 2008. MapReduce: simplified data processing on large clusters. Communications of the ACM, 51(1), pp.107-113.
+- [x] Lamport, L., 2001. Paxos made simple. ACM SIGACT News (Distributed Computing Column) 32, 4 (Whole Number 121, December 2001), pp.51-58.
+- [x] Lamport, L., Shostak, R. and Pease, M., 2019. The Byzantine generals problem. In Concurrency: the works of leslie lamport (pp. 203-226).
+### To Read
 - [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. Starling: A scalable query engine on cloud functions. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
 - [ ] Verbitski, A., Gupta, A., Saha, D., Brahmadesam, M., Gupta, K., Mittal, R., Krishnamurthy, S., Maurice, S., Kharatishvili, T. and Bao, X., 2017, May. Amazon aurora: Design considerations for high throughput cloud-native relational databases. In Proceedings of the 2017 ACM International Conference on Management of Data (pp. 1041-1052).
 - [ ] Dynamo
 - [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
-
+- [ ] Yang, J., Zhang, Y., Qiu, Z., Yue, Y. and Vinayak, R., 2023, October. FIFO queues are all you need for cache eviction. In Proceedings of the 29th Symposium on Operating Systems Principles (pp. 130-149).
+- [ ] Ma, L., Van Aken, D., Hefny, A., Mezerhane, G., Pavlo, A. and Gordon, G.J., 2018, May. Query-based workload forecasting for self-driving database management systems. In Proceedings of the 2018 International Conference on Management of Data (pp. 631-645).
+- [ ] Zhang, Y., Chronis, Y., Patel, J.M. and Rekatsinas, T., 2023. Simple Adaptive Query Processing vs. Learned Query Optimizers: Observations and Analysis. Proceedings of the VLDB Endowment, 16(11), pp.2962-2975.
+- [ ] Kraska, T., Alizadeh, M., Beutel, A., Chi, E.H., Ding, J., Kristo, A., Leclerc, G., Madden, S., Mao, H. and Nathan, V., 2021. Sagedb: A learned database system.
 
 ## TiDB
 
