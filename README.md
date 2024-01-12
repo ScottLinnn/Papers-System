@@ -39,6 +39,7 @@ Highly Available/High Availability - HA
 - [ ] Kraska, T., Alizadeh, M., Beutel, A., Chi, E.H., Ding, J., Kristo, A., Leclerc, G., Madden, S., Mao, H. and Nathan, V., 2021. Sagedb: A learned database system.
 - [ ] Burrows, M., 2006, November. The Chubby lock service for loosely-coupled distributed systems. In Proceedings of the 7th symposium on Operating systems design and implementation (pp. 335-350).
 - [ ] Kraska, T., Beutel, A., Chi, E.H., Dean, J. and Polyzotis, N., 2018, May. The case for learned index structures. In Proceedings of the 2018 international conference on management of data (pp. 489-504).
+- [ ] Hentschel, B., Kester, M.S. and Idreos, S., 2018, May. Column sketches: A scan accelerator for rapid and robust predicate evaluation. In Proceedings of the 2018 International Conference on Management of Data (pp. 857-872).
 
 ## TiDB
 
