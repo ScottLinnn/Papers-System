@@ -10,36 +10,38 @@ Highly Available/High Availability - HA
 
 ## List
 ### Read + Noted
-- [x] TiDB
-- [x] Bigtable
-- [x] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
-- [x] Zhou, X., Yu, X., Graefe, G. and Stonebraker, M., 2023. Two is Better Than One: The Case for 2-Tree for Skewed Data Sets. memory, 11, p.13.
-- [x] Franklin, M.J., 1997. Concurrency Control and Recovery.
-- [x] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. Building an elastic query engine on disaggregated storage. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
-- [x] Li, G., Dong, H. and Zhang, C., 2022. Cloud databases: New techniques, challenges, and opportunities. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
-- [x] Li, G., Zhou, X. and Cao, L., 2021, June. AI meets database: AI4DB and DB4AI. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
-- [x] Stonebraker, M. and Hellerstein, J., 2005. What goes around comes around. Readings in database systems, 4, p.1.
-- [x] Abadi, D.J., Madden, S.R. and Hachem, N., 2008, June. Column-stores vs. row-stores: how different are they really?. In Proceedings of the 2008 ACM SIGMOD international conference on Management of data (pp. 967-980).
+- [x] _TiDB_
+- [x] _Bigtable_
+- [x] Pavlo, A., Curino, C. and Zdonik, S., 2012, May. _Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems_. In Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data (pp. 61-72).
+- [x] Zhou, X., Yu, X., Graefe, G. and Stonebraker, M., 2023. _Two is Better Than One: The Case for 2-Tree for Skewed Data Sets_. memory, 11, p.13.
+- [x] Franklin, M.J., 1997. _Concurrency Control and Recovery_.
+- [x] Vuppalapati, M., Miron, J., Agarwal, R., Truong, D., Motivala, A. and Cruanes, T., 2020. _Building an elastic query engine on disaggregated storage_. In 17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20) (pp. 449-462).
+- [x] Li, G., Dong, H. and Zhang, C., 2022. _Cloud databases: New techniques, challenges, and opportunities_. Proceedings of the VLDB Endowment, 15(12), pp.3758-3761.
+- [x] Li, G., Zhou, X. and Cao, L., 2021, June. _AI meets database: AI4DB and DB4AI_. In Proceedings of the 2021 International Conference on Management of Data (pp. 2859-2866).
+- [x] Stonebraker, M. and Hellerstein, J., 2005. _What goes around comes around_. Readings in database systems, 4, p.1.
+- [x] Abadi, D.J., Madden, S.R. and Hachem, N., 2008, June. _Column-stores vs. row-stores: how different are they really?_. In Proceedings of the 2008 ACM SIGMOD international conference on Management of data (pp. 967-980).
+- [x] Armbrust, M., Ghodsi, A., Xin, R. and Zaharia, M., 2021, January. _Lakehouse: a new generation of open platforms that unify data warehousing and advanced analytics_. In Proceedings of CIDR (Vol. 8).
 ### Read
-- [x] Hauser, C., Jacobi, C., Theimer, M., Welch, B. and Weiser, M., 1993. Using threads in interactive systems: A case study. ACM SIGOPS Operating Systems Review, 27(5), pp.94-105.
-- [x] Savage, S., Burrows, M., Nelson, G., Sobalvarro, P. and Anderson, T., 1997. Eraser: A dynamic data race detector for multithreaded programs. ACM Transactions on Computer Systems (TOCS), 15(4), pp.391-411.
-- [x] Patterson, D.A., Gibson, G. and Katz, R.H., 1988, June. A case for redundant arrays of inexpensive disks (RAID). In Proceedings of the 1988 ACM SIGMOD international conference on Management of data (pp. 109-116).
-- [x] Lamport, L., 2019. Time, clocks, and the ordering of events in a distributed system. In Concurrency: the Works of Leslie Lamport (pp. 179-196).
-- [x] Dean, J. and Ghemawat, S., 2008. MapReduce: simplified data processing on large clusters. Communications of the ACM, 51(1), pp.107-113.
-- [x] Lamport, L., 2001. Paxos made simple. ACM SIGACT News (Distributed Computing Column) 32, 4 (Whole Number 121, December 2001), pp.51-58.
-- [x] Lamport, L., Shostak, R. and Pease, M., 2019. The Byzantine generals problem. In Concurrency: the works of leslie lamport (pp. 203-226).
+- [x] Hauser, C., Jacobi, C., Theimer, M., Welch, B. and Weiser, M., 1993. _Using threads in interactive systems: A case study_. ACM SIGOPS Operating Systems Review, 27(5), pp.94-105.
+- [x] Savage, S., Burrows, M., Nelson, G., Sobalvarro, P. and Anderson, T., 1997. _Eraser: A dynamic data race detector for multithreaded programs_. ACM Transactions on Computer Systems (TOCS), 15(4), pp.391-411.
+- [x] Patterson, D.A., Gibson, G. and Katz, R.H., 1988, June. _A case for redundant arrays of inexpensive disks (RAID)_. In Proceedings of the 1988 ACM SIGMOD international conference on Management of data (pp. 109-116).
+- [x] Lamport, L., 2019. _Time, clocks, and the ordering of events in a distributed system_. In Concurrency: the Works of Leslie Lamport (pp. 179-196).
+- [x] Dean, J. and Ghemawat, S., 2008. _MapReduce: simplified data processing on large clusters_. Communications of the ACM, 51(1), pp.107-113.
+- [x] Lamport, L., 2001. _Paxos made simple_. ACM SIGACT News (Distributed Computing Column) 32, 4 (Whole Number 121, December 2001), pp.51-58.
+- [x] Lamport, L., Shostak, R. and Pease, M., 2019. _The Byzantine generals problem_. In Concurrency: the works of leslie lamport (pp. 203-226).
 ### To Read
-- [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. Starling: A scalable query engine on cloud functions. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
-- [ ] Verbitski, A., Gupta, A., Saha, D., Brahmadesam, M., Gupta, K., Mittal, R., Krishnamurthy, S., Maurice, S., Kharatishvili, T. and Bao, X., 2017, May. Amazon aurora: Design considerations for high throughput cloud-native relational databases. In Proceedings of the 2017 ACM International Conference on Management of Data (pp. 1041-1052).
-- [ ] Dynamo
-- [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. The log-structured merge-tree (LSM-tree). Acta Informatica, 33, pp.351-385.
-- [ ] Yang, J., Zhang, Y., Qiu, Z., Yue, Y. and Vinayak, R., 2023, October. FIFO queues are all you need for cache eviction. In Proceedings of the 29th Symposium on Operating Systems Principles (pp. 130-149).
-- [ ] Ma, L., Van Aken, D., Hefny, A., Mezerhane, G., Pavlo, A. and Gordon, G.J., 2018, May. Query-based workload forecasting for self-driving database management systems. In Proceedings of the 2018 International Conference on Management of Data (pp. 631-645).
-- [ ] Zhang, Y., Chronis, Y., Patel, J.M. and Rekatsinas, T., 2023. Simple Adaptive Query Processing vs. Learned Query Optimizers: Observations and Analysis. Proceedings of the VLDB Endowment, 16(11), pp.2962-2975.
-- [ ] Kraska, T., Alizadeh, M., Beutel, A., Chi, E.H., Ding, J., Kristo, A., Leclerc, G., Madden, S., Mao, H. and Nathan, V., 2021. Sagedb: A learned database system.
-- [ ] Burrows, M., 2006, November. The Chubby lock service for loosely-coupled distributed systems. In Proceedings of the 7th symposium on Operating systems design and implementation (pp. 335-350).
-- [ ] Kraska, T., Beutel, A., Chi, E.H., Dean, J. and Polyzotis, N., 2018, May. The case for learned index structures. In Proceedings of the 2018 international conference on management of data (pp. 489-504).
-- [ ] Hentschel, B., Kester, M.S. and Idreos, S., 2018, May. Column sketches: A scan accelerator for rapid and robust predicate evaluation. In Proceedings of the 2018 International Conference on Management of Data (pp. 857-872).
+- [ ] Perron, M., Castro Fernandez, R., DeWitt, D. and Madden, S., 2020, June. _Starling: A scalable query engine on cloud functions_. In Proceedings of the 2020 ACM SIGMOD International Conference on Management of Data (pp. 131-141).
+- [ ] Verbitski, A., Gupta, A., Saha, D., Brahmadesam, M., Gupta, K., Mittal, R., Krishnamurthy, S., Maurice, S., Kharatishvili, T. and Bao, X., 2017, May. _Amazon aurora: Design considerations for high throughput cloud-native relational databases_. In Proceedings of the 2017 ACM International Conference on Management of Data (pp. 1041-1052).
+- [ ] _Dynamo_
+- [ ] O’Neil, P., Cheng, E., Gawlick, D. and O’Neil, E., 1996. _The log-structured merge-tree (LSM-tree)_. Acta Informatica, 33, pp.351-385.
+- [ ] Yang, J., Zhang, Y., Qiu, Z., Yue, Y. and Vinayak, R., 2023, October. _FIFO queues are all you need for cache eviction_. In Proceedings of the 29th Symposium on Operating Systems Principles (pp. 130-149).
+- [ ] Ma, L., Van Aken, D., Hefny, A., Mezerhane, G., Pavlo, A. and Gordon, G.J., 2018, May. _Query-based workload forecasting for self-driving database management systems_. In Proceedings of the 2018 International Conference on Management of Data (pp. 631-645).
+- [ ] Zhang, Y., Chronis, Y., Patel, J.M. and Rekatsinas, T., 2023. _Simple Adaptive Query Processing vs. Learned Query Optimizers: Observations and Analysis_. Proceedings of the VLDB Endowment, 16(11), pp.2962-2975.
+- [ ] Kraska, T., Alizadeh, M., Beutel, A., Chi, E.H., Ding, J., Kristo, A., Leclerc, G., Madden, S., Mao, H. and Nathan, V., 2021. _Sagedb: A learned database system_.
+- [ ] Burrows, M., 2006, November. _The Chubby lock service for loosely-coupled distributed systems_. In Proceedings of the 7th symposium on Operating systems design and implementation (pp. 335-350).
+- [ ] Kraska, T., Beutel, A., Chi, E.H., Dean, J. and Polyzotis, N., 2018, May. _The case for learned index structures_. In Proceedings of the 2018 international conference on management of data (pp. 489-504).
+- [ ] Hentschel, B., Kester, M.S. and Idreos, S., 2018, May. _Column sketches: A scan accelerator for rapid and robust predicate evaluation_. In Proceedings of the 2018 International Conference on Management of Data (pp. 857-872).
+
 
 ## TiDB
 
@@ -177,6 +179,15 @@ Three Weaknesses
 -	Analysis on query execution steps is hard to understand…not sure if it’s my problem
 -	As a paper focusing on comparing existing systems rather than building some new stuff, I think it can be much shorter.
 
+## Armbrust21
 
+An overview of the main idea   
 
+The two-tier architecture of having a data lake storing different types of data and a data warehouse running analytical queries from the lake is too redundant and inefficient. It proposes a unified architecture that tries to combine the query performance of warehouse and direct accesses to data of lake by using open format to store data and build some classical DB optimization upon it. This thing, called Lakehouse, has been shown to have “not bad” query performance compared to warehouse with other advantages on management and good support for ML/Data science.  
+
+Key findings / takeaways from the paper  
+- Current open format is not optimal, more work needs to be done.
+- Companies are using this architecture, it has a promising future!
+
+I think this is essentially a "unifying" problem. We have different, specialized ways to handle different formats of data due to some reasons, it's sort of determined that we need to unify their accesses/processing one day.
 
