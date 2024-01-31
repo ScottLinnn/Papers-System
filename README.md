@@ -21,6 +21,7 @@ Highly Available/High Availability - HA
 - [x] Stonebraker, M. and Hellerstein, J., 2005. _What goes around comes around_. Readings in database systems, 4, p.1.
 - [x] Abadi, D.J., Madden, S.R. and Hachem, N., 2008, June. _Column-stores vs. row-stores: how different are they really?_. In Proceedings of the 2008 ACM SIGMOD international conference on Management of data (pp. 967-980).
 - [x] Armbrust, M., Ghodsi, A., Xin, R. and Zaharia, M., 2021, January. _Lakehouse: a new generation of open platforms that unify data warehousing and advanced analytics_. In Proceedings of CIDR (Vol. 8).
+- [x] Afroozeh, A. and Boncz, P., 2023. _The FastLanes Compression Layout: Decoding> 100 Billion Integers per Second with Scalar Code_. Proceedings of the VLDB Endowment, 16(9), pp.2132-2144.
 ### Read
 - [x] Hauser, C., Jacobi, C., Theimer, M., Welch, B. and Weiser, M., 1993. _Using threads in interactive systems: A case study_. ACM SIGOPS Operating Systems Review, 27(5), pp.94-105.
 - [x] Savage, S., Burrows, M., Nelson, G., Sobalvarro, P. and Anderson, T., 1997. _Eraser: A dynamic data race detector for multithreaded programs_. ACM Transactions on Computer Systems (TOCS), 15(4), pp.391-411.
@@ -191,3 +192,16 @@ Key findings / takeaways from the paper
 
 I think this is essentially a "unifying" problem. We have different, specialized ways to handle different formats of data due to some reasons, it's sort of determined that we need to unify their accesses/processing one day.
 
+## Afroozeh23
+
+An overview of the main idea
+
+The paper tries to design a new data format for 1024-bits SIMD to exploit parallelism. The new format aims to resolve the incompatibility between common OLAP optimizations (bit-packing, RLE, dictionary encoding, etc) through, essentially, doing math. It also has the ambition of minimizing tech debt by keeping code portable and providing “unified transposed layout”.
+
+Key findings / takeaways from the paper
+
+1. Existing DBMSs are not exploiting parallelism, a lot of space to do better.
+2. And we cannot simply "catch up" hardware changes, instead we need to work "prematurely" for the future.
+
+In fact I'm not very familar with SIMD so it's hard for me to fully understand. I'm moved by their efforts on exploiting parallelism and working at such a low level, but my estimate is, at the end of the day,
+hardware will just be strong enough to cover our needs and we don't need _exploit_ parallelism. The era that data access demands growing faster than hardware evolution has passed, we will have decreasing demands on performance optimization.
